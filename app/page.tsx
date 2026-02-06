@@ -32,7 +32,7 @@ export default function LandingPage() {
       <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 px-6 py-4 flex justify-between items-center">
         <div className="flex items-center gap-2">
           <div className="bg-black text-white px-2 py-0.5 text-[11px] font-black tracking-widest uppercase">
-            Posts
+            Posts by Mndly
           </div>
         </div>
         <div className="flex gap-6 items-center">
@@ -64,9 +64,9 @@ export default function LandingPage() {
               </div>
 
               <h1 className="text-6xl md:text-8xl font-light tracking-tighter leading-[0.9] text-black">
-                The <span className="italic font-serif">only</span> CRM
+                Posts <span className="italic font-serif">by</span> Mndly
                 <span className="block text-5xl md:text-7xl text-slate-400 mt-4">
-                  built for solo agents.
+                  Built for solo agents.
                 </span>
               </h1>
 
@@ -271,7 +271,7 @@ export default function LandingPage() {
                     </div>
                     <div className="space-y-2">
                       <h3 className="text-2xl font-serif italic">
-                        You&apos;re on the list!
+                        You're on the list!
                       </h3>
                       <p className="text-sm text-slate-500 max-w-[280px] mx-auto">
                         Check your email for access to Simple Follow Up and
@@ -284,7 +284,6 @@ export default function LandingPage() {
             </motion.div>
           </div>
         </section>
-
         {/* THE PROBLEM SECTION */}
         <section className="max-w-5xl mx-auto mb-32">
           <div className="bg-slate-50 border border-slate-200 p-12 space-y-8">
@@ -628,29 +627,6 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
-
-        {/* FINAL CTA */}
-        <section className="max-w-3xl mx-auto text-center space-y-8 bg-slate-50 border border-slate-200 p-16">
-          <h2 className="text-5xl font-serif italic text-black">
-            Join the first 100 agents
-          </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Get instant access to Simple Follow Up and early access to Instant
-            Replies and Content Engine.
-            <span className="block mt-2 text-black font-semibold">
-              Lifetime discount for early adopters.
-            </span>
-          </p>
-          <a
-            href="#join"
-            className="inline-block bg-black text-white px-12 py-5 text-sm font-black tracking-[0.3em] uppercase hover:bg-slate-800 transition-all"
-          >
-            Join Waitlist →
-          </a>
-          <div className="text-xs text-slate-400 uppercase tracking-wider">
-            No credit card required • Early access guaranteed
-          </div>
-        </section>
       </main>
 
       {/* FOOTER */}
@@ -659,40 +635,13 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="space-y-4">
               <div className="bg-black text-white px-2 py-0.5 text-[9px] font-black tracking-widest uppercase inline-block">
-                Posts
-              </div>
-            </div>
-            <div className="space-y-4">
-              <div className="text-[9px] uppercase tracking-widest font-bold">
-                Available Now
-              </div>
-              <div className="space-y-2 text-sm">
-                <div>Simple Follow Up</div>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <div className="text-[9px] uppercase tracking-widest font-bold">
-                Coming Soon
-              </div>
-              <div className="space-y-2 text-sm">
-                <div>Instant Replies</div>
-                <div>Content Engine</div>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <div className="text-[9px] uppercase tracking-widest font-bold">
-                Legal
-              </div>
-              <div className="space-y-2 text-sm">
-                <div>Privacy Policy</div>
-                <div>Terms of Service</div>
-                <div>Contact</div>
+                Posts by Mndly
               </div>
             </div>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 pt-12 border-t border-slate-200">
             <div className="text-[9px] uppercase tracking-[0.4em] font-bold">
-              © {new Date().getFullYear()} Posts / All Rights Reserved
+              © {new Date().getFullYear()} Posts by Mndly / All Rights Reserved
             </div>
             <div className="text-[9px] uppercase tracking-[0.4em] font-bold">
               Made for real estate agents who want to win
