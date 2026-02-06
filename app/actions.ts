@@ -4,15 +4,30 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const AUDIENCE_ID = process.env.RESEND_AUDIENCE_ID!;
-const YOUR_EMAIL = 'rumaizahmed1@gmail.com'; // Your email for alerts
+const YOUR_EMAIL = process.env.ALERT_EMAIL!;
 
+/**
+ * Escapes HTML special characters to prevent XSS attacks.
+ */
+function escapeHtml(text: string): string {
+  const map: { [key: string]: string } = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#x27;',
+  };
+  return text.replaceAll(/[&<>"']/g, (char) => map[char]);
+}
 // Optional: Add a database or logging service for fallback
 // import { logWaitlistEntry } from '@/lib/db'; // Example fallback
 
 export async function handleWaitlist(formData: FormData) {
-  const email = formData.get('email') as string;
-  const name = formData.get('name') as string;
-  const brokerage = (formData.get('brokerage') as string) || 'Not provided';
+  const email = escapeHtml(formData.get('email') as string);
+  const name = escapeHtml(formData.get('name') as string);
+  const brokerage = escapeHtml(
+    (formData.get('brokerage') as string) || 'Not provided',
+  );
 
   // Validate inputs
   if (!email || !name) {
@@ -125,11 +140,10 @@ export async function handleWaitlist(formData: FormData) {
               <a href="https://getposts.app?utm_source=waitlist&utm_medium=email&utm_campaign=confirmation"
                  class="cta-button">
                 VISIT OUR SITE
-              </a>
-
-              <hr class="divider" />
-              <p class="footer">
-                Questions? Reply to this email. We’re here to help.<br />
+    console.error('Waitlist Submission Error:', {
+      error: err,
+      context: { hasEmail: !!email, hasName: !!name, brokerage },
+    });                Questions? Reply to this email. We’re here to help.<br />
                 © 2026 Posts. All rights reserved.
               </p>
             </div>
@@ -148,7 +162,7 @@ export async function handleWaitlist(formData: FormData) {
     // Fallback: Log to a database or send a Slack alert
     // await logWaitlistEntry({ email, name, brokerage }); // Example fallback
 
-    // Return success to avoid breaking the UI, but log the error
-    return { success: true, error: 'Failed to send notification (check logs)' };
+    // Return error so UI can prompt user to retry
+    return { success: false, error: 'Something went wrong. Please try again.' };
   }
 }

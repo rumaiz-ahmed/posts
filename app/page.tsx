@@ -492,7 +492,7 @@ export default function LandingPage() {
                 leads, not cold calls.
               </p>
               <div className="text-[9px] uppercase tracking-widest font-bold text-slate-400">
-                Launching March Soon
+                Launching Soon
               </div>
             </div>
 
@@ -510,7 +510,7 @@ export default function LandingPage() {
                 timing—all in seconds.
               </p>
               <div className="text-[9px] uppercase tracking-widest font-bold text-slate-400">
-                Launching April Soon
+                Launching Soon
               </div>
             </div>
           </div>
@@ -661,9 +661,6 @@ export default function LandingPage() {
               <div className="bg-black text-white px-2 py-0.5 text-[9px] font-black tracking-widest uppercase inline-block">
                 Posts
               </div>
-              <p className="text-sm text-slate-500">
-                The all-in-one real estate marketing system launching in Soon.
-              </p>
             </div>
             <div className="space-y-4">
               <div className="text-[9px] uppercase tracking-widest font-bold">

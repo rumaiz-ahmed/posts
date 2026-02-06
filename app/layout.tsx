@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: 'Posts | The All-in-One Real Estate Marketing System',
     description:
       'Automate your real estate marketing with Posts. Instant lead responses, automatic follow-ups, and professional social media posts—all in one tool.',
-    images: ['https:/posts.app/twitter-image.jpg'], // Replace with your Twitter card image
+    images: ['https://getposts.app/twitter-image.jpg'], // Replace with your Twitter card image
     creator: '@rumaizahmed', // Replace with your Twitter handle
   },
   icons: {
@@ -82,7 +82,7 @@ export default function RootLayout({
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-XXXXXXX'); // Replace GTM-XXXXXXX with your GTM ID
+              })(window,document,'script','dataLayer','G-84EGZ0DKR4');
             `,
           }}
         />
