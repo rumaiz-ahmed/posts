@@ -14,56 +14,50 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Posts | The All-in-One Real Estate Marketing System',
-    template: '%s | Posts',
+    default: 'Simple Follow Up | CRM for Solo Real Estate Agents',
+    template: '%s | Simple Follow Up',
   },
   description:
-    'Posts is the only all-in-one marketing system for real estate agents. Respond to leads instantly, follow up automatically, and post professional content—all in one place.',
+    'The dead-simple CRM for solo real estate agents. Automatic follow-up reminders on days 1, 3, 7, 14, 30, 90. Never lose a deal to forgotten follow-ups. $19/month.',
   keywords: [
     'real estate CRM',
-    'real estate marketing',
+    'solo agent CRM',
     'lead follow-up',
-    'real estate automation',
-    'AI for real estate',
+    'real estate follow up tool',
+    'simple CRM for realtors',
   ],
   authors: [{ name: 'Rumaiz Ahmed' }],
   creator: 'Rumaiz Ahmed',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://getposts.app', // Replace with your domain
-    title: 'Posts | The All-in-One Real Estate Marketing System',
+    url: 'https://mndly.netlify.app', // Your actual URL
+    title: 'Simple Follow Up | Never Forget to Follow Up Again',
     description:
-      'Automate your real estate marketing with Posts. Instant lead responses, automatic follow-ups, and professional social media posts—all in one tool.',
-    siteName: 'Posts',
+      'Automatic follow-up reminders for solo real estate agents. Days 1, 3, 7, 14, 30, 90. Join the waitlist for 50% off for life.',
+    siteName: 'Simple Follow Up',
     images: [
       {
-        url: 'https://getposts.app/og-image.jpg', // Replace with your Open Graph image
+        url: 'https://mndly.netlify.app/og-image.jpg', // You need to create this
         width: 1200,
         height: 630,
-        alt: 'Posts: Real Estate Marketing System',
+        alt: 'Simple Follow Up: CRM for Solo Agents',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Posts | The All-in-One Real Estate Marketing System',
+    title: 'Simple Follow Up | CRM for Solo Real Estate Agents',
     description:
-      'Automate your real estate marketing with Posts. Instant lead responses, automatic follow-ups, and professional social media posts—all in one tool.',
-    images: ['https://getposts.app/twitter-image.jpg'], // Replace with your Twitter card image
-    creator: '@rumaizahmed', // Replace with your Twitter handle
+      'Never forget to follow up again. Automatic reminders. $9.50/month for waitlist members.',
+    images: ['https://mndly.netlify.app/twitter-image.jpg'],
+    creator: '@rumaizahmed',
   },
   icons: {
-    icon: [
-      { url: '/favicon.ico' }, // Replace with your favicon
-      // { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      // { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png' }, // Replace with your Apple touch icon
-    ],
+    icon: [{ url: '/favicon.ico' }],
+    apple: [{ url: '/apple-touch-icon.png' }],
   },
-  manifest: '/site.webmanifest', // Replace with your web manifest
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({
@@ -74,38 +68,31 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Google Tag Manager */}
+        {/* Google Analytics */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-84EGZ0DKR4"
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','G-84EGZ0DKR4');
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-84EGZ0DKR4');
             `,
           }}
         />
+
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        {/* Preconnect to Google for GTM */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://www.google-analytics.com" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#fafafa] text-[#1a1a1a]`}
       >
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=G-84EGZ0DKR4" // Replace GTM-XXXXXXX with your GTM ID
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
         {children}
       </body>
     </html>
